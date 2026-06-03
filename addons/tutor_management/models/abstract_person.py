@@ -55,7 +55,7 @@ class AbstractPerson(models.AbstractModel):
     full_name = fields.Char(string='Full Name', compute='_compute_full_name', store=True, index=True)
     country_id = fields.Many2one(comodel_name='res.country', string='Country')
     language_id = fields.Many2one(comodel_name='res.lang', string='Language')
-    user_id = fields.Many2one(comodel_name='res.users', string='User', ondelete='restrict')
+    user_id = fields.Many2one(comodel_name='res.users', string='User', ondelete='restrict', readonly=False)
 
     @api.depends('birth_date')
     def _compute_age(self):

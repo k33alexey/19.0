@@ -100,9 +100,12 @@
         <field name="name">tutor.lesson.kanban</field>
         <field name="model">tutor.lesson</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="state" quick_create="false" sample="1">
+            <kanban default_group_by="state" quick_create="False" sample="1">
                 <field name="state"/>
                 <field name="appointment_date"/>
+                <progressbar
+                        field="state"
+                        colors='{"planned": "info", "in_progress": "warning", "done": "success", "cancel": "danger"}'/>
                 <templates>
                     <t t-name="card">
                         <div class="oe_kanban_global_click">
@@ -121,10 +124,10 @@
                                        }"/>
                             </div>
                             <div class="o_kanban_record_body">
-                                <div><i class="fa fa-calendar me-1"/> <field name="appointment_date"/></div>
-                                <div><i class="fa fa-user me-1"/> <field name="tutor_id"/></div>
-                                <div><i class="fa fa-graduation-cap me-1"/> <field name="student_id"/></div>
-                                <div><i class="fa fa-book me-1"/> <field name="spec_id"/></div>
+                                <div><i class="fa fa-calendar me-1 text-warning"/><field name="appointment_date"/></div>
+                                <div><i class="fa fa-user me-1 text-primary"/><field name="tutor_id"/></div>
+                                <div><i class="fa fa-graduation-cap me-1"/><field name="student_id"/></div>
+                                <div><i class="fa fa-book me-1 text-info"/><field name="spec_id"/></div>
                             </div>
                         </div>
                     </t>

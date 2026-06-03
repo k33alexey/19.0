@@ -49,7 +49,6 @@ class MyModel(models.Model):
         for record in self:
             record.total_amount = ... # логика вычисления
 
-
     ################################
     # 6. constrains
     ################################
