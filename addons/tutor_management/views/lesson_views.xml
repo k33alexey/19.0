@@ -105,7 +105,7 @@
                 <field name="appointment_date"/>
                 <progressbar
                         field="state"
-                        colors='{"planned": "info", "in_progress": "warning", "done": "success", "cancel": "danger"}'/>
+                        colors='{"planned": "secondary", "in_progress": "warning", "done": "success", "cancel": "danger"}'/>
                 <templates>
                     <t t-name="card">
                         <div class="oe_kanban_global_click">
